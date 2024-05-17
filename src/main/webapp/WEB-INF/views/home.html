@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--    <script>-->
+<!--        document.addEventListener("DOMContentLoaded", function () {-->
+<!--            // Lấy thẻ select của ngày, tháng và năm-->
+<!--            var daySelect = document.getElementById("moveDate");-->
+<!--            var monthSelect = document.getElementById("moveMonth");-->
+<!--            var yearSelect = document.getElementById("moveYear");-->
+
+<!--            //Hàm để tạo các lựa chọn cho ngày-->
+<!--            function createDayOptions() {-->
+<!--                // Xóa các lựa chọn ngày hiện có (nếu có)-->
+<!--                daySelect.innerHTML = "";-->
+
+<!--                // Tạo các lựa chọn từ 1 đến 31-->
+<!--                for (var i = 1; i <= 31; i++) {-->
+<!--                    var option = document.createElement("option");-->
+<!--                    option.value = i;-->
+<!--                    option.text = i;-->
+<!--                    daySelect.appendChild(option);-->
+<!--                }-->
+<!--            }-->
+
+<!--            // Hàm để tạo các lựa chọn cho tháng-->
+<!--            function createMonthOptions() {-->
+<!--                // Xóa các lựa chọn tháng hiện có (nếu có)-->
+<!--                monthSelect.innerHTML = "";-->
+
+<!--                // Tạo các lựa chọn từ 1 đến 12-->
+<!--                for (var i = 1; i <= 12; i++) {-->
+<!--                    var option = document.createElement("option");-->
+<!--                    option.value = i;-->
+<!--                    option.text = i;-->
+<!--                    monthSelect.appendChild(option);-->
+<!--                }-->
+<!--            }-->
+
+<!--            // Hàm để tạo các lựa chọn cho năm-->
+<!--            function createYearOptions(startYear, endYear) {-->
+<!--                // Xóa các lựa chọn năm hiện có (nếu có)-->
+<!--                yearSelect.innerHTML = "";-->
+
+<!--                // Tạo các lựa chọn từ startYear đến endYear-->
+<!--                for (var i = startYear; i <= endYear; i++) {-->
+<!--                    var option = document.createElement("option");-->
+<!--                    option.value = i;-->
+<!--                    option.text = i;-->
+<!--                    yearSelect.appendChild(option);-->
+<!--                }-->
+<!--            }-->
+
+<!--            // Gọi các hàm để tạo các lựa chọn ban đầu-->
+<!--            createDayOptions();-->
+<!--            createMonthOptions();-->
+<!--            createYearOptions(2022, 2024);-->
+<!--        })-->
+<!--    </script>-->
+
+    <meta charset="UTF-8">
+    <title>Khaibao</title>
+</head>
+<body>
+<div class="header">
+    <h2 class="head-title">TỜ KHAI Y TẾ</h2>
+    <h3>ĐÂY LÀ TÀI LIỆU QUAN TRỌNG, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG
+        DỊCH BÊN TRUYỀN NHIỄM </h3>
+    <h4 class="caution">Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình sự</h4>
+</div>
+<div class="container">
+    <form th:action="@{/declare}" th:method="post" th:object="${declaration}">
+        <p>Họ tên (ghi chữ IN HOA)</p>
+        <input type="text" th:field="*{customerInfor.name}"/>
+        <span>Năm sinh</span>
+        <input type="text" th:field="*{customerInfor.yearOfBirth}"/>
+        <span>Giới tính</span>
+        <input type="text" th:field="*{customerInfor.gender}"/>
+        <p>Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác</p>
+        <input type="text" th:field="*{customerInfor.id}"/>
+        <p>Thông tin đi lại</p>
+        <select th:field="*{movementInfor.vehicle}">
+            <option th:value="Tàu" th:text="'Tàu bay'"></option>
+            <option th:value="'Tàu thuyền'" th:text="'Tàu thuyền'">Tàu thuyền</option>
+            <option th:value="'Ô tô'" th:text="'Ô tô'">Ô tô</option>
+            <option th:value="Khác" th:text="'Khác'">Khác</option>
+        </select>
+
+        <span>Số hiệu phương tiện</span>
+        <input th:field="*{movementInfor.vehicleId}" placeholder="VD:VN123"/>
+        <span>Số ghế</span>
+        <input th:field="*{movementInfor.seatNum}"/>
+        <span>Ngày </span>
+        <input type="date" th:field="*{movementTime.moveDate}">
+        <span>Tháng </span>
+        <input type="date" th:field="*{movementTime.moveMonth}">
+        <span>Năm </span>
+        <input type="date" th:field="*{movementTime.moveYear}">
+
+
+
+        <button type="submit">Gửi</button>
+    </form>
+
+
+</div>
+</body>
+</html>
