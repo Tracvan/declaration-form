@@ -24,6 +24,38 @@ public class Symptom {
         this.skinRash = skinRash;
     }
 
+    public void setFever(boolean fever) {
+        this.fever = fever;
+    }
+
+    public void setCough(boolean cough) {
+        this.cough = cough;
+    }
+
+    public void setDyspnea(boolean dyspnea) {
+        this.dyspnea = dyspnea;
+    }
+
+    public void setSoreThroat(boolean soreThroat) {
+        this.soreThroat = soreThroat;
+    }
+
+    public void setNausea(boolean nausea) {
+        this.nausea = nausea;
+    }
+
+    public void setDiarrhea(boolean diarrhea) {
+        this.diarrhea = diarrhea;
+    }
+
+    public void setSkinBleeding(boolean skinBleeding) {
+        this.skinBleeding = skinBleeding;
+    }
+
+    public void setSkinRash(boolean skinRash) {
+        this.skinRash = skinRash;
+    }
+
     public boolean isFever() {
         return fever;
     }

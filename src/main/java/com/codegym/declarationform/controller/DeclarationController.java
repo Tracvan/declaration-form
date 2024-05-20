@@ -6,9 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.sql.Array;
-import java.util.ArrayList;
-
 @Controller
 public class DeclarationController {
     @GetMapping("")
@@ -16,6 +13,7 @@ public class DeclarationController {
         Declaration declaration = new Declaration();
         model.addAttribute("declaration", declaration);
         return "home";
+
     }
     @PostMapping("/declare")
     public String showDeclaration(Declaration declaration, Model model){

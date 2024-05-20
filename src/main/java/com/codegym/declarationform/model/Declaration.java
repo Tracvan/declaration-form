@@ -6,22 +6,15 @@ public class Declaration {
     private CustomerInfor customerInfor;
     private MovementInfor movementInfor;
     private MovementTime movementTime;
+
     private String ArrivedLocation;
     private ContactInfor contactInfor;
     private Symptom symptom;
-    private boolean healthHistory;
+    private HealthHistory healthHistory;
 
-    private Date test;
 
-    public Date getTest() {
-        return test;
-    }
-
-    public void setTest(Date test) {
-        this.test = test;
-    }
-
-    public Declaration(CustomerInfor customerInfor, MovementInfor movementInfor, MovementTime movementTime, String arrivedLocation, ContactInfor contactInfor, Symptom symptom, boolean healthHistory, Date test) {
+    public Declaration(CustomerInfor customerInfor, MovementInfor movementInfor, MovementTime movementTime,
+                       String arrivedLocation, ContactInfor contactInfor, Symptom symptom, HealthHistory healthHistory ) {
         this.customerInfor = customerInfor;
         this.movementInfor = movementInfor;
         this.movementTime = movementTime;
@@ -29,18 +22,9 @@ public class Declaration {
         this.contactInfor = contactInfor;
         this.symptom = symptom;
         this.healthHistory = healthHistory;
-        this.test = test;
+
     }
 
-    public Declaration(CustomerInfor customerInfor, MovementInfor movementInfor, MovementTime movementTime, String arrivedLocation, ContactInfor contactInfor, Symptom symptom, boolean healthHistory) {
-        this.customerInfor = customerInfor;
-        this.movementInfor = movementInfor;
-        this.movementTime = movementTime;
-        ArrivedLocation = arrivedLocation;
-        this.contactInfor = contactInfor;
-        this.symptom = symptom;
-        this.healthHistory = healthHistory;
-    }
 
     public Declaration() {
     }
@@ -93,11 +77,17 @@ public class Declaration {
         this.symptom = symptom;
     }
 
-    public boolean isHealthHistory() {
+
+    public HealthHistory getHealthHistory() {
         return healthHistory;
     }
 
-    public void setHealthHistory(boolean healthHistory) {
+    public void setHealthHistory(HealthHistory healthHistory) {
         this.healthHistory = healthHistory;
     }
+
+    public void setMovementTime(MovementTime movementTime) {
+        this.movementTime = movementTime;
+    }
+
 }

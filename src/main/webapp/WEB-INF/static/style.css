@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+select{
+    height: 29px;
+    border: 1px solid grey;
+    font-size: 20px;
+}
+option{
+    font-size: 18px;
+}
+
+.head-title {
+    display: flex;
+    justify-content: center;
+}
+
+.intro-title {
+    display: flex;
+    justify-content: center;
+}
+
+.caution {
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+input {
+    border: 1px solid grey;
+    height: 25px;
+}
+
+.input-name {
+    width: 50%
+}
+
+.frame-1 {
+    display: flex;
+    height: 80px;
+}
+.frame-1 input{
+    border: 1px solid grey;
+}
+
+.frame-1-1 {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.frame-1-2 {
+    margin-right: 10px;
+
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.frame-1-3 {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.input-id{
+    width: 50%;
+}
+.frame-2{
+    display: flex;
+    width: 100%;
+}
+.frame-2-1{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+.frame-2-2{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+.frame-2-3{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+.movementTime{
+    display: flex;
+}
+.move{
+    width: 50%;
+}
+.back{
+    width: 50%;
+}
+.move-date{
+    margin-right: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.move-month{
+    margin-right: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.move-year{
+    margin-right: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.back-date{
+    margin-right: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.back-month{
+    margin-right: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.back-year{
+    margin-right: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.move-detail{
+    display: flex;
+}
+.back-detail{
+    display: flex;
+}
+.arrivedLocation input{
+    width: 50%;
+}
+.frame-3{
+    display: flex;
+    width: 100%;
+}
+.city{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width :33%
+}
+.district{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+.ward{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+.frame-4{
+    width: 100%;
+}
+.frame-4 input{
+    width: 50%;
+}
+.frame-5{
+    display: flex;
+}
+.phone{
+    margin-right: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.email{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+table{
+    border: 1px solid grey;
+    width: 100%;
+}
+td {
+    border: 1px solid grey;
+}
+th{
+    border: 1px solid grey;
+}
+.btn{
+    font-size: 30px;
+    width: 200px;
+    border-radius: 50px;
+    background-color: rgba(91, 160, 243, 0.58);
+}
+.submit-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

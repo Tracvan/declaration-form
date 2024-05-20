@@ -67,21 +67,5 @@ public class MovementTime {
     public void setBackYear(String backYear) {
         this.backYear = backYear;
     }
-//@DateTimeFormat(pattern = "yyyy-MM-dd")
-//    private Date date;
-//
-//    public MovementTime(Date date) {
-//        this.date = date;
-//    }
-//
-//    public MovementTime() {
-//    }
-//
-//    public Date getDate() {
-//        return date;
-//    }
-//
-//    public void setDate(Date date) {
-//        this.date = date;
-//    }
+
 }

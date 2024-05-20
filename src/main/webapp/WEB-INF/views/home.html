@@ -1,107 +1,364 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<!--    <script>-->
-<!--        document.addEventListener("DOMContentLoaded", function () {-->
-<!--            // Lấy thẻ select của ngày, tháng và năm-->
-<!--            var daySelect = document.getElementById("moveDate");-->
-<!--            var monthSelect = document.getElementById("moveMonth");-->
-<!--            var yearSelect = document.getElementById("moveYear");-->
+<!--    <link rel="stylesheet" href="/style.css">-->
+<!--    <link rel="stylesheet" type="text/css" th:href="@{../static/style.css}">-->
+    <!--        <script>-->
+    <!--            document.addEventListener("DOMContentLoaded", function () {-->
+    <!--                // Lấy thẻ select của ngày, tháng và năm-->
+    <!--                var daySelect = document.getElementById("moveDate");-->
+    <!--                var monthSelect = document.getElementById("moveMonth");-->
+    <!--                var yearSelect = document.getElementById("moveYear");-->
 
-<!--            //Hàm để tạo các lựa chọn cho ngày-->
-<!--            function createDayOptions() {-->
-<!--                // Xóa các lựa chọn ngày hiện có (nếu có)-->
-<!--                daySelect.innerHTML = "";-->
+    <!--                //Hàm để tạo các lựa chọn cho ngày-->
+    <!--                function createDayOptions() {-->
+    <!--                    // Xóa các lựa chọn ngày hiện có (nếu có)-->
+    <!--                    daySelect.innerHTML = "";-->
 
-<!--                // Tạo các lựa chọn từ 1 đến 31-->
-<!--                for (var i = 1; i <= 31; i++) {-->
-<!--                    var option = document.createElement("option");-->
-<!--                    option.value = i;-->
-<!--                    option.text = i;-->
-<!--                    daySelect.appendChild(option);-->
-<!--                }-->
-<!--            }-->
+    <!--                    // Tạo các lựa chọn từ 1 đến 31-->
+    <!--                    for (var i = 1; i <= 31; i++) {-->
+    <!--                        var option = document.createElement("option");-->
+    <!--                        option.value = i;-->
+    <!--                        option.text = i;-->
+    <!--                        daySelect.appendChild(option);-->
+    <!--                    }-->
+    <!--                }-->
 
-<!--            // Hàm để tạo các lựa chọn cho tháng-->
-<!--            function createMonthOptions() {-->
-<!--                // Xóa các lựa chọn tháng hiện có (nếu có)-->
-<!--                monthSelect.innerHTML = "";-->
+    <!--                // Hàm để tạo các lựa chọn cho tháng-->
+    <!--                function createMonthOptions() {-->
+    <!--                    // Xóa các lựa chọn tháng hiện có (nếu có)-->
+    <!--                    monthSelect.innerHTML = "";-->
 
-<!--                // Tạo các lựa chọn từ 1 đến 12-->
-<!--                for (var i = 1; i <= 12; i++) {-->
-<!--                    var option = document.createElement("option");-->
-<!--                    option.value = i;-->
-<!--                    option.text = i;-->
-<!--                    monthSelect.appendChild(option);-->
-<!--                }-->
-<!--            }-->
+    <!--                    // Tạo các lựa chọn từ 1 đến 12-->
+    <!--                    for (var i = 1; i <= 12; i++) {-->
+    <!--                        var option = document.createElement("option");-->
+    <!--                        option.value = i;-->
+    <!--                        option.text = i;-->
+    <!--                        monthSelect.appendChild(option);-->
+    <!--                    }-->
+    <!--                }-->
 
-<!--            // Hàm để tạo các lựa chọn cho năm-->
-<!--            function createYearOptions(startYear, endYear) {-->
-<!--                // Xóa các lựa chọn năm hiện có (nếu có)-->
-<!--                yearSelect.innerHTML = "";-->
+    <!--                // Hàm để tạo các lựa chọn cho năm-->
+    <!--                function createYearOptions(startYear, endYear) {-->
+    <!--                    // Xóa các lựa chọn năm hiện có (nếu có)-->
+    <!--                    yearSelect.innerHTML = "";-->
 
-<!--                // Tạo các lựa chọn từ startYear đến endYear-->
-<!--                for (var i = startYear; i <= endYear; i++) {-->
-<!--                    var option = document.createElement("option");-->
-<!--                    option.value = i;-->
-<!--                    option.text = i;-->
-<!--                    yearSelect.appendChild(option);-->
-<!--                }-->
-<!--            }-->
+    <!--                    // Tạo các lựa chọn từ startYear đến endYear-->
+    <!--                    for (var i = startYear; i <= endYear; i++) {-->
+    <!--                        var option = document.createElement("option");-->
+    <!--                        option.value = i;-->
+    <!--                        option.text = i;-->
+    <!--                        yearSelect.appendChild(option);-->
+    <!--                    }-->
+    <!--                }-->
 
-<!--            // Gọi các hàm để tạo các lựa chọn ban đầu-->
-<!--            createDayOptions();-->
-<!--            createMonthOptions();-->
-<!--            createYearOptions(2022, 2024);-->
-<!--        })-->
-<!--    </script>-->
+    <!--                // Gọi các hàm để tạo các lựa chọn ban đầu-->
+    <!--                createDayOptions();-->
+    <!--                createMonthOptions();-->
+    <!--                createYearOptions(2022, 2024);-->
+    <!--            })-->
+    <!--        </script>-->
 
     <meta charset="UTF-8">
     <title>Khaibao</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 <div class="header">
     <h2 class="head-title">TỜ KHAI Y TẾ</h2>
-    <h3>ĐÂY LÀ TÀI LIỆU QUAN TRỌNG, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG
+    <h3 class="intro-title">ĐÂY LÀ TÀI LIỆU QUAN TRỌNG, THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN
+        THIẾT ĐỂ PHÒNG CHỐNG
         DỊCH BÊN TRUYỀN NHIỄM </h3>
     <h4 class="caution">Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình sự</h4>
 </div>
 <div class="container">
     <form th:action="@{/declare}" th:method="post" th:object="${declaration}">
-        <p>Họ tên (ghi chữ IN HOA)</p>
-        <input type="text" th:field="*{customerInfor.name}"/>
-        <span>Năm sinh</span>
-        <input type="text" th:field="*{customerInfor.yearOfBirth}"/>
-        <span>Giới tính</span>
-        <input type="text" th:field="*{customerInfor.gender}"/>
-        <p>Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác</p>
-        <input type="text" th:field="*{customerInfor.id}"/>
-        <p>Thông tin đi lại</p>
-        <select th:field="*{movementInfor.vehicle}">
-            <option th:value="Tàu" th:text="'Tàu bay'"></option>
-            <option th:value="'Tàu thuyền'" th:text="'Tàu thuyền'">Tàu thuyền</option>
-            <option th:value="'Ô tô'" th:text="'Ô tô'">Ô tô</option>
-            <option th:value="Khác" th:text="'Khác'">Khác</option>
-        </select>
+        <div class="customerInfor">
+            <p>Họ tên (ghi chữ IN HOA)</p>
+            <input class="input-name" type="text" th:field="*{customerInfor.name}"/>
+            <div class="frame-1">
+                <div class="frame-1-1">
+                    <span>Năm sinh</span>
+                    <input type="text" th:field="*{customerInfor.yearOfBirth}"/>
+                </div>
+                <div class="frame-1-2">
+                    <span>Giới tính</span>
+                    <input type="text" th:field="*{customerInfor.gender}"/>
+                </div>
+                <div class="frame-1-3">
+                    <span>Quốc tịch</span>
+                    <select type="text" th:field="*{customerInfor.national}">
+                        <option th:value="'Việt Nam'" th:text="'Việt Nam'"></option>
+                    </select>
+                </div>
+            </div>
+            <p>Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác</p>
+            <input class="input-id" type="text" th:field="*{customerInfor.id}"/>
+        </div>
+        <div class="movementInfor">
+            <div class="frame-2">
+                <div class="frame-2-1">
+                    <p>Thông tin đi lại</p>
+                    <select th:field="*{movementInfor.vehicle}">
+                        <option th:value="Tàu" th:text="'Tàu bay'"></option>
+                        <option th:value="'Tàu thuyền'" th:text="'Tàu thuyền'">Tàu thuyền</option>
+                        <option th:value="'Ô tô'" th:text="'Ô tô'">Ô tô</option>
+                        <option th:value="Khác" th:text="'Khác'">Khác</option>
+                    </select>
+                </div>
+                <div class="frame-2-2">
+                    <span>Số hiệu phương tiện</span>
+                    <input th:field="*{movementInfor.vehicleId}" placeholder="VD:VN123"/>
+                </div>
+                <div class="frame-2-3">
+                    <span>Số ghế</span>
+                    <input th:field="*{movementInfor.seatNum}"/>
+                </div>
 
-        <span>Số hiệu phương tiện</span>
-        <input th:field="*{movementInfor.vehicleId}" placeholder="VD:VN123"/>
-        <span>Số ghế</span>
-        <input th:field="*{movementInfor.seatNum}"/>
-        <span>Ngày </span>
-        <input type="date" th:field="*{movementTime.moveDate}">
-        <span>Tháng </span>
-        <input type="date" th:field="*{movementTime.moveMonth}">
-        <span>Năm </span>
-        <input type="date" th:field="*{movementTime.moveYear}">
+            </div>
+            <div class="movementTime">
+                <div class="move">
+                    <p>Thời điểm khởi hành</p>
+                    <div class="move-detail">
+                        <div class="move-date">
+                            <span>Ngày </span>
+                            <input th:field="*{movementTime.moveDate}"/>
+                        </div>
+                        <div class="move-month">
+                            <span>Tháng </span>
+                            <input th:field="*{movementTime.moveMonth}"/>
+                        </div>
+                        <div class="move-year">
+                            <span>Năm </span>
+                            <input th:field="*{movementTime.moveYear}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <p>Thời điểm kết thúc</p>
+                    <div class="back-detail">
+                        <div class="back-date">
+                            <span>Ngày</span>
+                            <input th:field="*{movementTime.backDate}"/>
+                        </div>
+                        <div class="back-month">
+                            <span>Tháng </span>
+                            <input th:field="*{movementTime.backMonth}"/>
+                        </div>
+                        <div class="back-year">
+                            <span>Năm </span>
+                            <input th:field="*{movementTime.backYear}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrivedLocation">
+                <p>Trong vòng 14 ngày qua,Anh/chị có đến tỉnh, thành phố nào?</p>
+                <input type="text" th:field="*{arrivedLocation}" placeholder="Vd: Tp.Hồ Chí Minh">
+            </div>
+            <div class="contactInfor">
+                <p>Địa chỉ liên lạc</p>
+                <div class="frame-3">
+                    <div class="city">
+                        <span>Tỉnh/thành phố</span>
+                        <input type="text" th:field="*{contactInfor.city} ">
+                    </div>
+                    <div class="district">
+                        <span>Quận/huyện</span>
+                        <input type="text" th:field="*{contactInfor.district} ">
+                    </div>
+                    <div class="ward">
+                        <span>Phường/xã</span>
+                        <input type="text" th:field="*{contactInfor.district} ">
+                    </div>
+                </div>
+                <div class="frame-4">
+                    <p>Địa chỉ nơi ở</p>
+                    <input type="text" th:field="*{contactInfor.address}">
+                </div>
+                <div class="frame-5">
+                    <div class="phone">
+                        <span>Số điện thoại liên lạc</span>
+                        <input type="text" th:field="*{contactInfor.contactNumber} ">
+                    </div>
+                    <div class="email">
+                        <span>email</span>
+                        <input type="text" th:field="*{contactInfor.email} ">
+                    </div>
+                </div>
+            </div>
+            <div class="symptom">
+                <table>
+                    <tr>
+                        <th>Triệu chứng</th>
+                        <th>Có</th>
+                        <th>Không</th>
+                    </tr>
+                    <tr>
+                        <td>Sốt</td>
+                        <td>
+                            <input th:field="*{symptom.fever}" name="fever" id="fever-true" type="radio"
+                                   value="true">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.fever}" name="fever" id="fever-false" type="radio"
+                                   value="false">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ho</td>
+                        <td>
+                            <input th:field="*{symptom.cough}" name="cough" id="cough-true" type="radio"
+                                   value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.cough}" name="cough" id="cough-false" type="radio"
+                                   value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Khó Thở</td>
+                        <td>
+                            <input th:field="*{symptom.dyspnea}" name="dyspnea" id="dyspnea-true" type="radio"
+                                   value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.dyspnea}" name="dyspnea" id="dyspnea-false" type="radio"
+                                   value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Đau họng</td>
+                        <td>
+                            <input th:field="*{symptom.soreThroat}" name="soreThroat" id="soreThroat-true"
+                                   type="radio"
+                                   value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.soreThroat}" name="soreThroat" id="soreThroat-false"
+                                   type="radio"
+                                   value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nôn/buồn nôn</td>
+                        <td>
+                            <input th:field="*{symptom.nausea}" name="nausea" id="nausea-true" type="radio"
+                                   value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.nausea}" name="nausea" id="nausea-false" type="radio"
+                                   value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tiêu chảy</td>
+                        <td>
+                            <input th:field="*{symptom.diarrhea}" name="diarrhea" id="diarrhea-true" type="radio"
+                                   value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.diarrhea}" name="diarrhea" id="diarrhea-false" type="radio"
+                                   value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Xuất huyết ngoài da</td>
+                        <td>
+                            <input th:field="*{symptom.skinBleeding}" name="skinBleeding" id="skinBleeding-true"
+                                   type="radio" value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.skinBleeding}" name="skinBleeding" id="skinBleeding-false"
+                                   type="radio" value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nổi ban ngoài da</td>
+                        <td>
+                            <input th:field="*{symptom.skinRash}" name="skinRash" id="skinRash-true" type="radio"
+                                   value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{symptom.skinRash}" name="skinRash" id="skinRash-false" type="radio"
+                                   value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="healthHistory">
+                <br>
+                <p>Lịch sử phơi nhiễm: trong vòng 14 ngày qua, Anh/chị có</p>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Có</th>
+                        <th>Không</th>
+                    </tr>
+                    <tr>
+                        <th>Đến trại chăn nuôi/ chợ buôn bán động vật sống/ cơ sở giết mổ động vật/ tiếp xúc động
+                            vật
+                        </th>
+                        <td>
+                            <input th:field="*{healthHistory.animalTouch}"  name="animalTouch" id="animalTouch-true" type="radio" value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{healthHistory.animalTouch}" name="animalTouch" id="animalTouch-false" type="radio" value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Tiếp xúc gần (<2m) với người mắc bệnh viêm đường hô hấp nCoV</th>
+                        <td>
+                            <input th:field="*{healthHistory.infection}" name="infection" id="infection-true" type="radio" value="true"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                        <td>
+                            <input th:field="*{healthHistory.infection}" name="infection" id="infection-false" type="radio" value="false"
+                                   onclick="disableOtherRadios(this)">
+                        </td>
+                    </tr>
+                </table>
+                <div class="last-word">
+                    <p>Dữ liệu bạn cung cấp hoàn toàn bảo mật và chỉ phục vụ cho việc phòng chống dịch, thuộc quản
+                        lý
+                        của
+                        Ban chỉ đạo quốc gia phòng chống dịch Covid-19. Khi bạn nhấn nút "Gửi" là bạn đã hiểu và
+                        đồng
+                        ý</p>
+                </div>
+            </div>
 
-
-
-        <button type="submit">Gửi</button>
+            <script>
+                function disableOtherRadios(checkedRadio) {
+                    var radios = document.getElementsByName(checkedRadio.name);
+                    radios.forEach(function (radio) {
+                        if (radio !== checkedRadio) {
+                            radio.checked = false;
+                        }
+                    });
+                }
+            </script>
+            <div class="submit-button">
+            <button class="btn" type="submit">Gửi tờ khai</button>
+            </div>
+        </div>
     </form>
-
-
 </div>
 </body>
 </html>
